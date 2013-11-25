@@ -3,21 +3,21 @@ class mariadb::repository {
   if $::rfc1918_gateway == 'true' {
     exec { 'mariadb-apt-key':
      path        => '/usr/bin:/bin:/usr/sbin:/sbin',
-     command     => "apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 1BB943DB --keyserver-options http-proxy=\"${::http_proxy}\"",
-     unless      => 'apt-key list | grep 1BB943DB >/dev/null 2>&1',
+     command     => "apt-key adv --recv-keys --keyserver keyserver.ubuntu.com 0xcbcb082a1bb943db",
+     unless      => 'apt-key list | grep 0xcbcb082a1bb943db >/dev/null 2>&1',
     }
 
   } else {
     apt::key { 'mariadb':
-      key         => '1BB943DB',
-      key_server => 'pgp.mit.edu',
+      key         => '0xcbcb082a1bb943db',
+      key_server => 'keyserver.ubuntu.com',
     }
   }
 
   apt::source { 'mariadb':
-    location    => 'http://mirror.aarnet.edu.au/pub/MariaDB/repo/5.5/ubuntu',
+    location    => 'http://mirror.1000mbps.com/mariadb/repo/10.0/ubuntu precise',
     repos       => 'main',
-    key         => '1BB943DB',
+    key         => '0xcbcb082a1bb943db',
   }
 
 }
