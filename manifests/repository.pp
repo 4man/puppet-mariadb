@@ -14,7 +14,6 @@ class mariadb::repository {
 #      key         => '0xcbcb082a1bb943db',
       key        => '1BB943DB',
       key_server => 'keyserver.ubuntu.com',
-      before => Class['mariadb::config'],
     }
   }
 
@@ -25,7 +24,6 @@ class mariadb::repository {
 #    key         => '0xcbcb082a1bb943db',
     key        => '1BB943DB',
     key_server => 'keyserver.ubuntu.com',
-    before => Class['mariadb::config'],
   }
 
 }
