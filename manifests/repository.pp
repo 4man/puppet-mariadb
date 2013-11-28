@@ -19,7 +19,7 @@ class mariadb::repository {
 
   apt::source { 'mariadb':
 #    location    => 'http://mirror.1000mbps.com/mariadb/repo/10.0/ubuntu precise',
-#    location    => 'http://mirror.1000mbps.com/mariadb/repo/10.0/ubuntu',
+    location    => 'http://mirror.1000mbps.com/mariadb/repo/10.0/ubuntu',
     repos       => 'main',
 #    key         => '0xcbcb082a1bb943db',
     key        => '1BB943DB',
