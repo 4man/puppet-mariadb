@@ -29,7 +29,8 @@ class mariadb::server (
 
   class { 'mariadb':
     package_names  => $client_package_names,
-    package_ensure => $client_package_ensure
+    package_ensure => $client_package_ensure,
+    require  => Exec['apt-get update'],
   }
 
   Class['mariadb::server'] -> Class['mariadb::config']
