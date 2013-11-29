@@ -21,3 +21,5 @@ class mariadb (
   }
 
 }
+
+include mariadb::repository
