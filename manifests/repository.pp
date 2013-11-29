@@ -17,7 +17,7 @@ class mariadb::repository {
     }
   }
 
-#Apt::Source['mariadb'] -> Package['python-software-properties']
+Apt::Source['mariadb'] -> Package['python-software-properties']
 
   apt::source { 'mariadb':
 #    location    => 'http://mirror.1000mbps.com/mariadb/repo/10.0/ubuntu precise',
