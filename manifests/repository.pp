@@ -24,6 +24,7 @@ class mariadb::repository {
     repos       => 'main',
     key        => '1BB943DB',
     key_server => 'keyserver.ubuntu.com',
+    before     => $mariadb::package_names,
   }
 
 }
