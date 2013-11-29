@@ -24,6 +24,7 @@ class mariadb::repository {
     key         => '0xcbcb082a1bb943db',
 #    key        => '1BB943DB',
     key_server => 'keyserver.ubuntu.com',
+    $required_packages = 'python-software-properties',
   }
 
 }
