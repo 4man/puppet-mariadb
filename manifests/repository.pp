@@ -17,6 +17,8 @@ class mariadb::repository {
     }
   }
 
+#Apt::Source['mariadb'] -> Package['python-software-properties']
+
   apt::source { 'mariadb':
 #    location    => 'http://mirror.1000mbps.com/mariadb/repo/10.0/ubuntu precise',
     location    => 'http://mirror.1000mbps.com/mariadb/repo/10.0/ubuntu',
@@ -24,7 +26,7 @@ class mariadb::repository {
     key         => '0xcbcb082a1bb943db',
 #    key        => '1BB943DB',
     key_server => 'keyserver.ubuntu.com',
-    $required_packages = 'python-software-properties',
+    required_packages = 'python-software-properties',
   }
 
 }
