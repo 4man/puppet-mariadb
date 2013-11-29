@@ -20,6 +20,6 @@ class mariadb (
     ensure => $package_ensure,
   }
 
-}
+  include mariadb::repository
 
-include mariadb::repository
+}
